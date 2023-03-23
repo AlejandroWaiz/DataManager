@@ -1,4 +1,4 @@
-package reader
+package data_reader
 
 type AllDataReaderImplementation struct {
 }

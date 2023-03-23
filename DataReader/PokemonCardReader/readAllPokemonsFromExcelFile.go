@@ -1,7 +1,7 @@
 package pokemon_card_reader
 
 import (
-	"log"
+	"fmt"
 	"os"
 	"strings"
 
@@ -11,13 +11,11 @@ import (
 var arrayOfPokemons []model.PokemonCard
 var pokemonMold model.PokemonCard
 
-func (p *PokemonCardReaderImplementation) ReadAllPokemonsFromExcelFile() ([]model.PokemonCard, []error) {
+func (p *PokemonCardReaderImplementation) ReadAllPokemonsFromExcelFile() ([]model.PokemonCard, error) {
 
 	allPokemonExcelSheets := os.Getenv("pokemon_excel_sheetnames")
 
 	arrayOfPokemonSheetsFromExcel := strings.Split(allPokemonExcelSheets, ",")
-
-	var arrayOfErrors []error
 
 	//Por cada hoja del excel de Pokemons se hará una iteración, recorriendo el documento en su totalidad.
 	for _, thisSheet := range arrayOfPokemonSheetsFromExcel {
@@ -25,8 +23,7 @@ func (p *PokemonCardReaderImplementation) ReadAllPokemonsFromExcelFile() ([]mode
 		allRows, err := p.excelFile.GetRows(thisSheet)
 
 		if err != nil {
-			arrayOfErrors = append(arrayOfErrors, err)
-			break
+			return nil, fmt.Errorf("[ReadAllPokemonsFromExcelFile] error: %v", err)
 		}
 
 		for i := range allRows {
@@ -42,35 +39,18 @@ func (p *PokemonCardReaderImplementation) ReadAllPokemonsFromExcelFile() ([]mode
 
 				for columnPosition, columnValue := range onlyColumns {
 
-					err := assignValueFromDatabaseToPokemonMold(pokemonMold, columnPosition, columnValue)
-
-					if err != nil {
-
-						log.Printf("Err assigning value %v from excel to pokemon: %v ", columnValue, err)
-
-						arrayOfErrors = append(arrayOfErrors, err)
-
-						break
-
-					}
+					assignValueFromDatabaseToPokemonMold(pokemonMold, columnPosition, columnValue)
 
 				}
 
 			}
 
 			arrayOfPokemons = append(arrayOfPokemons, pokemonMold)
-
 			pokemonMold.ResetStruct()
 
 		}
 
 	}
 
-	if len(arrayOfErrors) > 0 {
-		log.Printf("Err reading pokemons: %v", arrayOfErrors)
-		return nil, arrayOfErrors
-	}
-
 	return arrayOfPokemons, nil
-
 }

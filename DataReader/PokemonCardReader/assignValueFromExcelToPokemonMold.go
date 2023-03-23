@@ -4,7 +4,7 @@ import model "example.com/AlejandroWaiz/DataManager/Model"
 
 var mapOfPokemonMovementsFromDatabase map[string]string
 
-func assignValueFromDatabaseToPokemonMold(pokemon model.PokemonCard, columnPosition int, columnValue string) error {
+func assignValueFromDatabaseToPokemonMold(pokemon model.PokemonCard, columnPosition int, columnValue string) {
 
 	if mapOfPokemonMovementsFromDatabase == nil {
 		mapOfPokemonMovementsFromDatabase = make(map[string]string)
@@ -102,7 +102,5 @@ func assignValueFromDatabaseToPokemonMold(pokemon model.PokemonCard, columnPosit
 
 		pokemonMold.ApparitionRatio = columnValue
 	}
-
-	return nil
 
 }
