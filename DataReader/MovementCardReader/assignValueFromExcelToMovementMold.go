@@ -4,7 +4,7 @@ import (
 	model "example.com/AlejandroWaiz/DataManager/Model"
 )
 
-func assignValueFromExcelToMovementMold(movementMold model.Movement, columnPosition int, columnValue string) error {
+func assignValueFromExcelToMovementMold(movementMold model.MovementCard, columnPosition int, columnValue string) error {
 
 	//Actually liked more this assignation than pokemon's one
 	switch columnPosition {
