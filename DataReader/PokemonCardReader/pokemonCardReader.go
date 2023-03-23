@@ -10,7 +10,7 @@ type PokemonCardReaderImplementation struct {
 }
 
 type PokemonCardReader interface {
-	ReadAllPokemonsFromExcelFile() ([]model.Pokemon, []error)
+	ReadAllPokemonsFromExcelFile() ([]model.PokemonCard, []error)
 }
 
 func GetPokemonCardReaderImplementation(file *excelize.File) PokemonCardReader {

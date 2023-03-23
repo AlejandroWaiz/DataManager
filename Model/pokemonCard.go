@@ -1,6 +1,6 @@
 package model
 
-type Pokemon struct {
+type PokemonCard struct {
 	ID              interface{}
 	Name            interface{}
 	Types           interface{}
@@ -22,9 +22,9 @@ type Proficiencies struct {
 	AttackProficiency, SpecialAttackProficiency, DefenseProficiency, SpecialDefenseProficiency, SpeedProficiency string
 }
 
-var emptyPokemon = &Pokemon{}
+var emptyPokemon = &PokemonCard{}
 
-func (p *Pokemon) ResetStruct() {
+func (p *PokemonCard) ResetStruct() {
 
 	*p = *emptyPokemon
 

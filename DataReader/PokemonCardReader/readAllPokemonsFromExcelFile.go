@@ -8,10 +8,10 @@ import (
 	model "example.com/AlejandroWaiz/DataManager/Model"
 )
 
-var arrayOfPokemons []model.Pokemon
-var pokemonMold model.Pokemon
+var arrayOfPokemons []model.PokemonCard
+var pokemonMold model.PokemonCard
 
-func (p *PokemonCardReaderImplementation) ReadAllPokemonsFromExcelFile() ([]model.Pokemon, []error) {
+func (p *PokemonCardReaderImplementation) ReadAllPokemonsFromExcelFile() ([]model.PokemonCard, []error) {
 
 	allPokemonExcelSheets := os.Getenv("pokemon_excel_sheetnames")
 

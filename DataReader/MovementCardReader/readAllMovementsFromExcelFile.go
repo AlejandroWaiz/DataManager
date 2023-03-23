@@ -8,10 +8,10 @@ import (
 	model "example.com/AlejandroWaiz/DataManager/Model"
 )
 
-var arrayOfMovements []model.Movement
-var movementMold model.Movement
+var arrayOfMovements []model.MovementCard
+var movementMold model.MovementCard
 
-func (m *MovementCardReaderImplementation) ReadAllMovementsFromExcelFile() ([]model.Movement, []error) {
+func (m *MovementCardReaderImplementation) ReadAllMovementsFromExcelFile() ([]model.MovementCard, []error) {
 
 	arrayOfMovementsSheetsFromExcel := strings.Split(os.Getenv("movements_excel_sheetnames"), ",")
 

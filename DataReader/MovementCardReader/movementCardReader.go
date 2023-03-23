@@ -10,7 +10,7 @@ type MovementCardReaderImplementation struct {
 }
 
 type MovementCardReader interface {
-	ReadAllMovementsFromExcelFile() ([]model.Movement, []error)
+	ReadAllMovementsFromExcelFile() ([]model.MovementCard, []error)
 }
 
 func GetMovementCardReaderImplementation(file *excelize.File) MovementCardReader {

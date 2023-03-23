@@ -1,6 +1,6 @@
 package model
 
-type Movement struct {
+type MovementCard struct {
 	ID        interface{}
 	Name      interface{}
 	Type      interface{}
@@ -11,9 +11,9 @@ type Movement struct {
 	Priority  interface{}
 }
 
-var emptyMovement = &Movement{}
+var emptyMovement = &MovementCard{}
 
-func (m *Movement) ResetStruct() {
+func (m *MovementCard) ResetStruct() {
 
 	*m = *emptyMovement
 
