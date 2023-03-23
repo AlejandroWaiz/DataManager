@@ -11,7 +11,7 @@ import (
 var arrayOfPokemons []model.Pokemon
 var pokemonMold model.Pokemon
 
-func (p *PokemonCardReaderImplementation) ReadAllPokemonsFromExcelFile() ([]model.Pokemo, []error) {
+func (p *PokemonCardReaderImplementation) ReadAllPokemonsFromExcelFile() ([]model.Pokemon, []error) {
 
 	allPokemonExcelSheets := os.Getenv("pokemon_excel_sheetnames")
 

@@ -13,8 +13,8 @@ type PokemonCardReader interface {
 	ReadAllPokemonsFromExcelFile() ([]model.Pokemon, []error)
 }
 
-func GetPokemonCardReaderImplementation() PokemonCardReader {
+func GetPokemonCardReaderImplementation(file *excelize.File) PokemonCardReader {
 
-	return &PokemonCardReaderImplementation{}
+	return &PokemonCardReaderImplementation{excelFile: file}
 
 }

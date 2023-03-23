@@ -1,12 +1,14 @@
 package model
 
 type Movement struct {
-	Name      string
-	Type      string
-	Class     string
-	Power     int
-	Precision string
-	Effect    string
+	ID        interface{}
+	Name      interface{}
+	Type      interface{}
+	Class     interface{}
+	Power     interface{}
+	Precision interface{}
+	Effect    interface{}
+	Priority  interface{}
 }
 
 var emptyMovement = &Movement{}
