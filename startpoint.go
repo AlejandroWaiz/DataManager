@@ -1,6 +1,10 @@
 package p
 
-import "context"
+import (
+	"context"
+
+	"github.com/joho/godotenv"
+)
 
 type GCSEvent struct {
 	Bucket string `json:"bucket"`
@@ -8,6 +12,8 @@ type GCSEvent struct {
 }
 
 func StartPoint(ctx context.Context, eventPayload GCSEvent) error {
+
+	godotenv.Load(".env")
 
 	return nil
 

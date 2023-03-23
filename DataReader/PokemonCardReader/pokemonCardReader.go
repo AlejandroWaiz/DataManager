@@ -1,9 +1,20 @@
 package pokemon_card_reader
 
-import "github.com/xuri/excelize/v2"
+import (
+	model "example.com/AlejandroWaiz/DataManager/Model"
+	"github.com/xuri/excelize/v2"
+)
 
 type PokemonCardReaderImplementation struct {
-	pokemonExcelFile *excelize.File
+	excelFile *excelize.File
 }
 
-type PokemonCardReader interface{}
+type PokemonCardReader interface {
+	ReadAllPokemonsFromExcelFile() ([]model.Pokemon, []error)
+}
+
+func GetPokemonCardReaderImplementation() PokemonCardReader {
+
+	return &PokemonCardReaderImplementation{}
+
+}
