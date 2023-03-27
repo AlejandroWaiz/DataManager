@@ -24,6 +24,7 @@ type AllDataReader interface {
 func GetAllDataReaderImplementationToRead(excelName string, excelFile *excelize.File) (AllDataReader, error) {
 
 	var reader AllDataReaderImplementation
+	reader.excelName = excelName
 
 	switch excelName {
 	case os.Getenv("pokemons_excel_filename"):
