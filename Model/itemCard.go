@@ -9,3 +9,11 @@ type ItemCard struct {
 
 	//Rareza del item??
 }
+
+var emptyItem = &ItemCard{}
+
+func (i *ItemCard) ResetStruct() {
+
+	*i = *emptyItem
+
+}
