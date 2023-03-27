@@ -26,15 +26,15 @@ func GetAllDataReaderImplementationToRead(excelName string, excelFile *excelize.
 	var reader AllDataReaderImplementation
 
 	switch excelName {
-	case os.Getenv("Pokemon_"):
+	case os.Getenv("pokemons_excel_filename"):
 		reader.PokemonReader = pokemon_card_reader.GetPokemonCardReaderImplementation(excelFile)
 		return &reader, nil
 
-	case "Movements.xlsx":
+	case os.Getenv("movements_excel_filename"):
 		reader.MovementReader = movement_card_reader.GetMovementCardReaderImplementation(excelFile)
 		return &reader, nil
 
-	case "Weathers.xlsx":
+	case os.Getenv("weathers_excel_filename"):
 		reader.WeatherCardReader = weather_card_reader.GetWeatherCardReaderImplementation(excelFile)
 		return &reader, nil
 
