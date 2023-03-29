@@ -38,3 +38,5 @@ func GetAllDataSaverImplementation() (AllDataSaver, error) {
 	return &AllDataSaverImplementation{client: firestoreClient, ctx: ctx, projectID: firestoreProjectID}, nil
 
 }
+
+var isAnError bool = false
