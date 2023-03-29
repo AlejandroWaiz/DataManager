@@ -6,10 +6,9 @@ import (
 	"os"
 
 	model "example.com/AlejandroWaiz/DataManager/Model"
-	"github.com/xuri/excelize/v2"
 )
 
-func (o *DataOrchestratorImplementation) ReadExcelAndStoreDataItIntoDatabase(excelFile *excelize.File, excelName string) error {
+func (o *DataOrchestratorImplementation) ReadExcelAndStoreDataItIntoDatabase(excelName string) error {
 
 	switch excelName {
 
