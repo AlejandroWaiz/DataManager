@@ -3,11 +3,9 @@ package data_reader
 import (
 	"fmt"
 	"os"
-
-	"github.com/xuri/excelize/v2"
 )
 
-func (a *AllDataReaderImplementation) ReadExcelAndReturnData(excelFile *excelize.File) (interface{}, error) {
+func (a *AllDataReaderImplementation) ReadExcelAndReturnData() (interface{}, error) {
 
 	switch a.excelName {
 

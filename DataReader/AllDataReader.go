@@ -18,7 +18,7 @@ type AllDataReaderImplementation struct {
 }
 
 type AllDataReader interface {
-	ReadExcelAndReturnData(excelFile *excelize.File) (interface{}, error)
+	ReadExcelAndReturnData() (interface{}, error)
 }
 
 func GetAllDataReaderImplementationToRead(excelName string, excelFile *excelize.File) (AllDataReader, error) {

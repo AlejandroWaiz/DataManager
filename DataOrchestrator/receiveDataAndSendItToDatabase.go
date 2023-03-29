@@ -15,7 +15,7 @@ func (o *DataOrchestratorImplementation) ReadExcelAndStoreDataItIntoDatabase(exc
 
 	case os.Getenv("pokemons_excel_filename"):
 
-		allData, err := o.datareader.ReadExcelAndReturnData(excelFile)
+		allData, err := o.datareader.ReadExcelAndReturnData()
 
 		if err != nil {
 			return fmt.Errorf("[ReadExcelAndStoreDataItIntoDatabase] => %v", err)
@@ -29,7 +29,7 @@ func (o *DataOrchestratorImplementation) ReadExcelAndStoreDataItIntoDatabase(exc
 
 	case os.Getenv("movements_excel_filename"):
 
-		allData, err := o.datareader.ReadExcelAndReturnData(excelFile)
+		allData, err := o.datareader.ReadExcelAndReturnData()
 
 		if err != nil {
 			return fmt.Errorf("[ReadExcelAndStoreDataItIntoDatabase] => %v", err)
@@ -42,7 +42,7 @@ func (o *DataOrchestratorImplementation) ReadExcelAndStoreDataItIntoDatabase(exc
 
 	case os.Getenv("items_excel_filename"):
 
-		allData, err := o.datareader.ReadExcelAndReturnData(excelFile)
+		allData, err := o.datareader.ReadExcelAndReturnData()
 
 		if err != nil {
 			return fmt.Errorf("[ReadExcelAndStoreDataItIntoDatabase] => %v", err)
@@ -56,7 +56,7 @@ func (o *DataOrchestratorImplementation) ReadExcelAndStoreDataItIntoDatabase(exc
 
 	case os.Getenv("weathers_excel_filename"):
 
-		allData, err := o.datareader.ReadExcelAndReturnData(excelFile)
+		allData, err := o.datareader.ReadExcelAndReturnData()
 
 		if err != nil {
 			return fmt.Errorf("[ReadExcelAndStoreDataItIntoDatabase] => %v", err)
