@@ -14,7 +14,7 @@ type PokemonCard struct {
 	Rarity          interface{}
 	//From 1 to 100, that will represent the % from his rarity group and zone being:
 	ApparitionRatio interface{}
-	Movements       []map[string]string
+	Movements       map[string]string
 	Proficiencies
 }
 

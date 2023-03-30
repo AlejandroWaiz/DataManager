@@ -3,16 +3,18 @@ package data_orchestrator
 import (
 	"context"
 	"fmt"
+	"os"
 
 	"cloud.google.com/go/storage"
 	"github.com/xuri/excelize/v2"
+	"google.golang.org/api/option"
 )
 
 func getExcelFile(excelName, bucketName string) (*excelize.File, error) {
 
 	ctx := context.Background()
 
-	storageClient, err := storage.NewClient(ctx)
+	storageClient, err := storage.NewClient(ctx, option.WithCredentialsFile(os.Getenv("serviceAccount_path")))
 
 	if err != nil {
 

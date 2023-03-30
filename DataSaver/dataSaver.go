@@ -29,7 +29,7 @@ func GetAllDataSaverImplementation() (AllDataSaver, error) {
 
 	firestoreProjectID := os.Getenv("firestore_projectID")
 
-	firestoreClient, err := firestore.NewClient(ctx, firestoreProjectID, option.WithCredentialsFile(os.Getenv("envFile_path")))
+	firestoreClient, err := firestore.NewClient(ctx, firestoreProjectID, option.WithCredentialsFile(os.Getenv("serviceAccount_path")))
 
 	if err != nil {
 		return nil, fmt.Errorf("[GetAllDataSaverImplementation] error: %v", err)

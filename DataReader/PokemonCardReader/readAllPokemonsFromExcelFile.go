@@ -13,7 +13,7 @@ var pokemonMold model.PokemonCard
 
 func (p *PokemonCardReaderImplementation) ReadAllPokemonsFromExcelFile() ([]model.PokemonCard, error) {
 
-	allPokemonExcelSheets := os.Getenv("pokemon_excel_sheetnames")
+	allPokemonExcelSheets := os.Getenv("pokemons_excel_sheetnames")
 
 	arrayOfPokemonSheetsFromExcel := strings.Split(allPokemonExcelSheets, ",")
 
@@ -44,6 +44,8 @@ func (p *PokemonCardReaderImplementation) ReadAllPokemonsFromExcelFile() ([]mode
 				}
 
 			}
+
+			pokemonMold.Movements = mapOfPokemonMovementsFromDatabase
 
 			arrayOfPokemons = append(arrayOfPokemons, pokemonMold)
 			pokemonMold.ResetStruct()
